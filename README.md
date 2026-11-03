@@ -1,5 +1,7 @@
 # NetPractice
 
+[![CI](https://github.com/HexCyb/NetPractice/actions/workflows/ci.yml/badge.svg)](https://github.com/HexCyb/NetPractice/actions/workflows/ci.yml)
+
 Ten small networks to repair in a browser. You give hosts and routers IP addresses, masks and routes until every packet arrives. The values change on every attempt, so this repository explains **how** to solve each level instead of listing answers. It also includes a small calculator, `tools/subnet.py`.
 
 > Originally completed at **42 Türkiye** as part of the common core. This repository is a 2026 rewrite, because the original notes were lost.
@@ -58,3 +60,10 @@ python3 tools/subnet.py 10.0.0.5/30 10.0.0.6 10.0.0.9
 # 10.0.0.6       same subnet
 # 10.0.0.9       DIFFERENT subnet
 ```
+
+## Continuous integration
+
+Every push runs [GitHub Actions](https://github.com/HexCyb/NetPractice/actions/workflows/ci.yml) (`.github/workflows/ci.yml`):
+
+- 13 unit tests for `tools/subnet.py` (conversions, masks, network and broadcast, host ranges, same-subnet checks) on Python 3.10 and 3.13
+- a command-line smoke test
